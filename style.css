@@ -1,0 +1,180 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400px;
+  background-color: rgb(231, 229, 229);
+}
+/* font styles */
+
+h1 {
+  font-size: 3rem;
+}
+
+/* mobile styles */
+header {
+  margin: 20px auto;
+  text-align: center;
+  background-color: skyblue;
+  padding-bottom: 8px;
+  border-radius: 10px;
+}
+header h1 {
+  margin-bottom: 8px;
+}
+
+form {
+  background-color: skyblue;
+  padding: 30px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+button {
+  padding: 1rem 2rem;
+  display: block;
+  margin: auto;
+  background-color: teal;
+  border: none;
+  text-transform: uppercase;
+  width: 100%;
+  font-weight: 600;
+  border-radius: 5px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.form-group > label,
+p {
+  font-weight: 600;
+}
+label.container,
+label.check-label {
+  font-weight: normal;
+}
+label,
+.form-group p {
+  line-height: 30px;
+}
+.radio-label,
+.check-label {
+  font-size: 1.5rem;
+}
+span {
+  font-style: italic;
+  font-size: 1.4rem;
+}
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 1.6rem;
+}
+
+/* design radio button and checkbox */
+[type="radio"],
+[type="checkbox"] {
+  opacity: 0;
+  float: left;
+}
+
+.container,
+.check-label {
+  position: relative;
+  padding-left: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.container .checkmark {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 1px solid;
+  left: 0;
+  top: 8px;
+  border-radius: 50%;
+}
+.container .checkmark::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: black;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: all 0.3s ease;
+}
+
+.container [type="radio"]:not(:checked) + .checkmark:before {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+.container [type="radio"]:checked + .checkmark::before {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+/* checkbox */
+.check-label span::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 5px;
+  left: 0;
+  border: 1px solid black;
+}
+
+.check-label span::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 10px;
+  border: 1px solid;
+  top: 6px;
+  left: 5px;
+  transform: rotate(45deg);
+  border-width: 0 3px 3px 0;
+  transition: all 0.3s ease;
+}
+
+[type="checkbox"]:checked + span::after {
+  opacity: 0.6;
+}
+[type="checkbox"]:not(:checked) + span::after {
+  opacity: 0;
+}
+.form-group textarea {
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 1.5rem;
+  border: 1px solid #d6d9dc;
+  border-radius: 10px;
+
+  min-height: 200px;
+  margin-bottom: 10px;
+  padding: 5px;
+  resize: none;
+}
+
+@media only screen and (min-width: 601px) {
+  form,
+  header {
+    max-width: 600px;
+  }
+}
